@@ -1,4 +1,10 @@
 import bpy
+from . import panel
+from . import preferences
+from . import operators
+from . import _refresh_
+
+_refresh_.reload_modules()
 
 bl_info = {
     "name": "A Structured Add-on",
@@ -13,12 +19,17 @@ bl_info = {
 }
 
 
+modules = [preferences, operators, panel]
+
+
 def register():
-    pass
+    for mod in modules:
+        mod.register_classes()
 
 
 def unregister():
-    pass
+    for mod in modules:
+        mod.unregister_classes()
 
 
 if __name__ == "__main__":
