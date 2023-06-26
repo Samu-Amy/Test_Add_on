@@ -7,7 +7,7 @@ from . import _refresh_
 _refresh_.reload_modules()
 
 bl_info = {
-    "name": "A Structured Add-on",
+    "name": "Structured Add-on",
     "description": "Add-on consisting of multiple files",
     "author": "Samu Amy",
     "version": (1, 0),
